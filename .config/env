@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Ideally this isn't zsh-specific
+
+# Customize path
+export PATH=$HOME/bin:$PATH
+
+# Specify apps
+export BROWSER=vivaldi-stable
+export EDITOR=nvim
+export TERMINAL=roxterm
+export VISUAL=nvim
+
+# Set XDG base dirs explicitly
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# Coerce apps into XDG base dirs
+alias mvn=mvn -gs "$XDG_CONFIG_HOME/maven/settings.xml"
+export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export HISTFILE="$XDG_DATA_HOME/zsh/history"
+export LESSHISTFILE=-
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
+export XCOMPOSECACHE="$XDG_CACHE_HOME/X11/xcompose"
+export XCOMPOSEFILE="$XDG_CONFIG_HOME/X11/xcompose"
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+
+# Initialize SDKMAN
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
