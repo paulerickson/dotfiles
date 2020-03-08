@@ -1,0 +1,11 @@
+OPTIONS=color,lit_corridor,standout,hilite_pet
+OPTIONS=boulder:0
+OPTIONS=showexp,time
+OPTIONS=autoquiver
+OPTIONS=msghistory=128
+OPTIONS=number_pad=1
+OPTIONS=pickup_types=$
+OPTIONS=runmode=walk
+OPTIONS=symset=DECgraphics
+OPTIONS=roguesymset=RogueEpyx
+

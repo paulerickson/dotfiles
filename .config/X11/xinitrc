@@ -1,0 +1,25 @@
+# Keyboard / Input
+setxkbmap -option compose:ralt # for alt keyboard with custom firmware
+numlockx &
+# setxkbmap dvorak -option compose:ralt -option caps:swapescape
+# xmodmap ~/.Xmodmap # using setxkbmap options now
+
+# Daemons
+#mpdscribble &
+#thunar --daemon &
+#dropbox &
+#xautolock -time 30 -corners -000 -detectsleep -locker "systemctl suspend" &
+
+# Monitor settings
+xrandr --dpi 120 # X defaults to 48 because of stupid TV
+#xflux -l 43.081331 -g -89.375952 & # adjust color temperature at night
+redshift &
+xset -dpms && xset s off & # don't let the screens fall asleep
+
+conky | while read -r; do xsetroot -name "$REPLY"; done &
+
+# auto-restarts dwm without losing windows
+while true; do
+    dwm >/dev/null 2>&1 # No error logging
+done
+

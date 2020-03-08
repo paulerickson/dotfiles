@@ -1,0 +1,6 @@
+export TODO_DIR="$XDG_DATA_HOME/todo"
+export TODO_FILE="$TODO_DIR/todo"
+export DONE_FILE="$TODO_DIR/done"
+export REPORT_FILE="$TODO_DIR/report"
+
+export TODOTXT_DEFAULT_ACTION=ls

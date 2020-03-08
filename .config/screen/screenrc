@@ -4,4 +4,4 @@ utf8 on on
 startup_message off
 term "screen-256color"
 
-hardstatus alwayslastline '%{= kw} %-w%{= Wk}%{= Wk} %n %t %{= kW}%{= kw}%+w'
+hardstatus alwayslastline '%{= Kw} %-w%{= WK}%{= WK} %n %t %{= KW}%{= Kw}%+w'
