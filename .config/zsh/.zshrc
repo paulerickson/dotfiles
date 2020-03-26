@@ -6,5 +6,5 @@ plugins=(git)
 
 source "$ZSH/oh-my-zsh.sh"
 
-alias todo='todo.sh -d "$XDG_CONFIG_HOME/todorc"'
+alias todo="$(command -v todo.sh todo-txt) -d $XDG_CONFIG_HOME/todorc"
 alias vim='nvim'
