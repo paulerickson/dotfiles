@@ -5,7 +5,9 @@ numlockx &
 # xmodmap ~/.Xmodmap # using setxkbmap options now
 
 # Daemons
-#mpdscribble &
+# TODO: this hasn't been working; is the env var not set, or something else?
+#mpdscribble --conf "$XDG_CONFIG_HOME/mpdscribble.conf" &
+mpdscribble --conf "/home/perickso/.config/mpdscribble.conf" &
 #thunar --daemon &
 #dropbox &
 #xautolock -time 30 -corners -000 -detectsleep -locker "systemctl suspend" &
@@ -16,7 +18,11 @@ xrandr --dpi 120 # X defaults to 48 because of stupid TV
 redshift &
 xset -dpms && xset s off & # don't let the screens fall asleep
 
-conky | while read -r; do xsetroot -name "$REPLY"; done &
+# set track and time in dwm status
+while true; do
+  CURRENT_TRACK=$(timeout 30 mpc current --wait || echo $CURRENT_TRACK)
+  xsetroot -name "${CURRENT_TRACK:+$CURRENT_TRACK 📾 }$(date '+%A, %B %d %l:%M %P')"
+done &
 
 # auto-restarts dwm without losing windows
 while true; do
