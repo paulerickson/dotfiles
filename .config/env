@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# Ideally this isn't zsh-specific
-
 # Customize path
-export PATH=$HOME/bin:$PATH
+path+=($HOME/bin/*/{bin,run})
 
 # Specify apps
 export BROWSER=vivaldi-stable
