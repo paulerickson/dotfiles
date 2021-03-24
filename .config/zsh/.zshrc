@@ -1,10 +1,7 @@
-source $HOME/.config/env
-
-ZSH_THEME="robbyrussell"
-
-plugins=(git)
-
+source "$HOME/.profile"
+source "$SDKMAN_DIR/bin/sdkman-init.sh"
 source "$ZSH/oh-my-zsh.sh"
 
-alias todo="$(command -v todo.sh todo-txt) -d $XDG_CONFIG_HOME/todorc"
-alias vim='nvim'
+alias todo='todo-txt'
+
+if command -v starship &> /dev/null; then eval "$(starship init zsh)"; fi

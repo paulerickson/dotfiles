@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Customize path
-path+=($HOME/bin/*/{bin,run})
+# Extract packages to bin & ensure they have a bin subdir; put other binaries in misc/bin
+path+=($HOME/bin/*/bin)
 
 # Specify apps
 export BROWSER=vivaldi-stable
@@ -21,6 +22,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GEM_HOME="$XDG_DATA_HOME/gem"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GOPATH="$XDG_DATA_HOME/go"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
@@ -47,6 +49,3 @@ export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
 export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zshcomp"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
-
-# Initialize SDKMAN
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
